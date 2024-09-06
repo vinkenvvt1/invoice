@@ -4,25 +4,27 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="skeleton.css">
 <style>
-th, td {border-bottom:none;color:#666;}
-.newline {width:100%;}
-.three.columns {margin:10px;height:320px;}
-label {display:inline-block;}
-img {width:200px;}
+th, td {color:#666;}
+.primary_1 {margin-left:0px;height:320px;}
+.primary_2 {width:100%;float:left;}
+.primary_1 img {width:180px;}
+label {font-weight:normal;}
 </style>
 </head>
 <body>
 <div class="container">
 
+<div>
 <form method="get">
 
+<div class="primary_2">
 <?php
 $data_raw = file_get_contents("a.json");
 $data = json_decode($data_raw, true);
 $count = count($data);
 
 for ($i=0; $i<$count; $i++) {
-echo '<div class="three columns">';
+echo '<div class="primary_1 three columns">';
 echo '<label>';
 echo '<img src="'.$data[$i]["img"].'">';
 echo "<br>";
@@ -31,13 +33,14 @@ echo "<br>";
 echo '<input type="checkbox" name="'.$data[$i]["name"].'" value="1">'.$data[$i]["item"].'</label>';
 echo "</div>";
 }
-echo '<input type="submit" class="button button-primary newline" value="settle">';
 ?>
-
+</div>
+<input type="submit" class="button button-primary newline" value="submit">
 </form>
+</div>
 
+<div>
 <table>
-
 <?php
 $all_quantity = 0;
 $all_price = 0;
@@ -65,6 +68,7 @@ echo '</td></tr>';
 
 ?>
 </table>
+</div>
 
 </div>
 </body>
