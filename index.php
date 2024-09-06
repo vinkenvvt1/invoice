@@ -6,7 +6,7 @@
 <style>
 th, td {color:#666;}
 .primary_1 {margin-left:0px;height:320px;}
-.primary_2 {width:100%;float:left;}
+.primary_2 {width:100%;display:inline-block;}
 .primary_1 img {width:180px;}
 label {font-weight:normal;}
 </style>
@@ -35,7 +35,7 @@ echo "</div>";
 }
 ?>
 </div>
-<input type="submit" class="button button-primary newline" value="submit">
+<input type="submit" class="button button-primary" value="submit">
 </form>
 </div>
 
